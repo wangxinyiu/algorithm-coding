@@ -10,6 +10,8 @@ public class Solution {
     int right = array.length - 1;
     //left <= right 是为了当数组长度为1时，也能进循环去check.
     while(left <= right){
+      // 不用 mid = (left + right) / 2 是为了避免整数溢出问题，int 最大值 ≈ 2,147,483,647
+      // 如果溢出了，不会报错。32 进制 补码
       int mid = left + (right - left) / 2;
       if(array[mid] == target){
         return mid;
